@@ -37,8 +37,6 @@ class SplitController extends Controller
 
 	public function actionIndex(){
 
-		$user = $this->userFinder->findById($this->user);
-
 		$request = Yii::createObject([
 			'class' => SplitRequestDto::class,
 			'n' => Console::input("N: "),
@@ -50,7 +48,10 @@ class SplitController extends Controller
 			return Controller::EXIT_CODE_ERROR;
 		}
 
-		$result = $this->splitService->splitArray($request, $user);
+		$result = $this->splitService->splitArray(
+			$request,
+			$this->userFinder->findById($this->user)
+		);
 
 		$this->stdout("Результат: " . $result ."\n", Console::FG_GREEN);
 

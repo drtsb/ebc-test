@@ -14,7 +14,7 @@ class ArraySplitter implements ArraySplitterInterface
     	$size = count($request->array);
 
     	for ($i=0; $i < $size; $i++) { 
-        	if ($request->n === $request->array[$i]) { $countEqual++; }
+        	if ($request->n == $request->array[$i]) { $countEqual++; }
         	else { $countNotEqual++; }
         	$equal[$i] = $countEqual;
         	$notEqual[$i] = $countNotEqual;
