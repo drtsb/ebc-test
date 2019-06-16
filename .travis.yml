@@ -39,5 +39,4 @@ before_script:
 
 script: 
   - composer validate --strict
-  - php -S localhost:8080 -t api/web/
-  - vendor/bin/codecept run
+  - php -S localhost:8080 -t api/web/ & vendor/bin/codecept run
