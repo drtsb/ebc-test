@@ -9,7 +9,7 @@ EBC
 ./init
 ```
 
-В /common/config/mail-local.php прописать настройки БД
+В /common/config/main-local.php прописать настройки БД
 
 ```
 ./yii migrate
@@ -32,6 +32,19 @@ POST /split/array
 }
 ```
 
+Пример curl-запроса
+```
+curl -i -X POST \
+   -H "Authorization:Bearer ChCMc0HY1n6vB03Ca6k_68Fr08XNkOUM_1560676428" \
+   -H "Content-Type:application/json" \
+   -d \
+'{
+	"n": 5,
+	"array": [5, 5, 1, 7, 2, 3, 5]
+}' \
+ 'http://api.ebc.local/split/array'
+```
+
 
 Console
 -------
@@ -48,13 +61,13 @@ Console
 
 Тесты
 -----
-В /common/config/test-local.php прописать настройки БД
+В /common/config/test-local.php прописать настройки тестовой БД
 
 ```
 ./yii_test migrate
 ```
 
-Запуск тестов
+Запуск
 ```
-./vendor/bin/codecept run
+php -S localhost:8080 -t api/web/ & vendor/bin/codecept run
 ```
