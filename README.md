@@ -2,3 +2,27 @@
 
 EBC
 ---
+
+REST API
+--------
+
+
+Console
+-------
+
+```
+./yii split
+```
+
+С указанием пользователя
+```
+./yii split -u=1
+./yii split --user=1
+```
+
+Тесты
+-----
+
+```
+./vendor/bin/codecept run
+```

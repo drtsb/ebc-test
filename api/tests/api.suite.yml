@@ -1,5 +1,5 @@
 suite_namespace: api\tests\api
-class_name: ApiTester
+actor: ApiTester
 modules:
    enabled:
        - REST:
