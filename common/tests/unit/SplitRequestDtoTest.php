@@ -32,6 +32,7 @@ class SplitRequestDtoTest extends \Codeception\Test\Unit
             [1, [1,1,'1.1'], false],
             [1, 0, false],
             ['a', [1,1,1], false],
+            [1, [1,1,1,'aaa'], false],
         ];
     }
 
